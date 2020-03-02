@@ -20,6 +20,18 @@
   #app-header{
     display: none;
   }
+  #app-content-wrapper.show-nav #app-content #app-actions{
+    display: none;
+  }
+  #app-content-wrapper{
+    display:flex;
+  }
+  /* #app-content{
+    width: 100%;
+  } */
+  #app-content-wrapper.show-nav #app-content{
+    padding-right:30%;
+  }
 
 
 </style>
@@ -28,11 +40,7 @@
 {% endblock %}
 
 {% block app_content %}
-<style>
-  #app-actions{
-    display: none;
-  }
-</style>
+
 {% endblock %}
 
 {% block app_actions %}
@@ -54,7 +62,7 @@
 {% block scripts %}
   {{ block.super }}
 
-  <!-- <script src="{% static 'resume/js/jquery-1.10.2.min.js' %}" type="text/javascript"></script> -->
+  <script src="{% static 'resume/js/jquery-1.10.2.min.js' %}" type="text/javascript"></script>
   <script src="{% static 'resume/js/jquery.lightbox.js' %}" type="text/javascript"></script>
   <script src="{% static 'resume/js/templatemo_custom.js' %}" type="text/javascript"></script>
   <script src="{% static 'resume/js/easyResponsiveTabs.js' %}" type="text/javascript"></script>

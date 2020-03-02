@@ -11,7 +11,7 @@ jQuery(document).ready(function($){
 		//$("#menu-container .homepage").hide();
 		return false;
 	});
-	
+
 
 	$(".main_menu a.templatemo_homeservice").click(function(){
 		$("#menu-container .portfolio").hide();
@@ -20,14 +20,14 @@ jQuery(document).ready(function($){
 	    });
 		return false;
 	});
-	
+
 	$(".main_menu a.templatemo_page2").click(function( ){
-    $('#menu-container .homepage').fadeOut(1000, function(){									  
+    $('#menu-container .homepage').fadeOut(1000, function(){
         $('#menu-container .services').fadeIn(1000);
 	    });
 	return false;
 	});
-	
+
 	$(".main_menu a.templatemo_homeportfolio").click(function(){
 		$('#menu-container .portfolio').fadeOut(1000, function(){
         $('#menu-container .homepage').fadeIn(1000);
@@ -35,21 +35,21 @@ jQuery(document).ready(function($){
 		return false;
 	});
 
-	$(".main_menu a.templatemo_page3").click(function(){    
+	$(".main_menu a.templatemo_page3").click(function(){
     $('#menu-container .homepage').fadeOut(1000, function(){
         $('#menu-container .portfolio').fadeIn(1000);
 	    });
 		return false;
 	});
-	
+
 	$(".main_menu a.templatemo_hometestimonial").click(function(){
 		$('#menu-container .testimonial').fadeOut(1000, function(){
         $('#menu-container .homepage').fadeIn(1000);
 	    });
 		return false;
 	});
-	
-	$(".main_menu a.templatemo_page4").click(function(){    
+
+	$(".main_menu a.templatemo_page4").click(function(){
     $('#menu-container .homepage').fadeOut(1000, function(){
         $('#menu-container .testimonial').fadeIn(1000);
 	    });
@@ -62,28 +62,28 @@ jQuery(document).ready(function($){
 		return false;
 	});
 
-	$(".main_menu a.templatemo_page5").click(function(){    
+	$(".main_menu a.templatemo_page5").click(function(){
     $('#menu-container .homepage').fadeOut(1000, function(){
         $('#menu-container .about').fadeIn(1000);
 	    });
 		return false;
 	});
-	
+
 	$(".main_menu a.templatemo_homecontact").click(function(){
 		$('#menu-container .contact').fadeOut(1000, function(){
         $('#menu-container .homepage').fadeIn(1000);
 	    });
 		return false;
 	});
-	
-	$(".main_menu a.templatemo_page6").click(function(){    
+
+	$(".main_menu a.templatemo_page6").click(function(){
     $('#menu-container .homepage').fadeOut(1000, function(){
         $('#menu-container .contact').fadeIn(1000);
-		loadScript();		
+		loadScript();
 	    });
 	});
-	
-	
+
+
 	/************** Gallery Hover Effect *********************/
 	$(".overlay").hide();
 
@@ -107,7 +107,7 @@ jQuery(document).ready(function($){
 	  $(".responsive_menu").stop(true,true).slideToggle();
 	  return false;
 	});
- 
+
     $(".responsive_menu a").click(function(){
 		$('.responsive_menu').hide();
 	});
@@ -124,8 +124,8 @@ function loadScript() {
 
 function initialize() {
     var mapOptions = {
-      zoom: 12,
-      center: new google.maps.LatLng(40.7823234,-73.9654161)
+      zoom: 16,
+      center: new google.maps.LatLng(40.246268, -111.647836)
     };
     var map = new google.maps.Map(document.getElementById('templatemo_map'),  mapOptions);
 }

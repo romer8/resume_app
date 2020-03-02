@@ -8,7 +8,7 @@ class Resume(TethysAppBase):
 
     name = 'Resume'
     index = 'resume:home'
-    icon = 'resume/images/icon.gif'
+    icon = 'resume/images/resume_logo.jpg'
     package = 'resume'
     root_url = 'resume'
     color = '#171117'
