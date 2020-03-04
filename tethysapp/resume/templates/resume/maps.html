@@ -45,7 +45,7 @@
 
 {% url 'resume:home' as home_url %}
 <br>
-<button class="btn btn-danger wow fadeInUp" class="{% if request.path == home_url %}active{% endif %}" data-wow-delay="0.4s" type="button" style = "width:100% ; color:white"><a href="{{ home_url }}">Home Page</a></button>
+<button class="btn btn-danger wow fadeInUp" class="{% if request.path == home_url %}active{% endif %}" data-wow-delay="0.4s" type="button" style = "width:100% ; color:white"><a href="{{ home_url }}" style= "color:white">Home Page</a></button>
 
 <!-- <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li> -->
 <!-- <li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
