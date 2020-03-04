@@ -12,32 +12,7 @@
 {# The name you provided in your app.py is accessible through the tethys_app.name context variable #}
 {% block app_title %}{{ tethys_app.name }}{% endblock %}
 
-{% block app_navigation_items %}
-<style>
-  #app-navigation{
-    display: none;
-  }
-  #app-header{
-    display: none;
-  }
-  #app-content-wrapper.show-nav #app-content #app-actions{
-    display: none;
-  }
-  #app-content-wrapper{
-    display:flex;
-  }
-  /* #app-content{
-    width: 100%;
-  } */
-  #app-content-wrapper.show-nav #app-content{
-    padding-right:30%;
-  }
 
-
-</style>
-
-<!-- This is the content in the other side -->
-{% endblock %}
 
 {% block app_content %}
 
@@ -67,6 +42,5 @@
   <script src="{% static 'resume/js/templatemo_custom.js' %}" type="text/javascript"></script>
   <script src="{% static 'resume/js/easyResponsiveTabs.js' %}" type="text/javascript"></script>
   <script src="{% static 'resume/js/main.js' %}" type="text/javascript"></script>
-
 
 {% endblock %}

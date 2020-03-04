@@ -1,0 +1,190 @@
+{% extends "resume/base.html" %}
+{% load tethys_gizmos %}
+{% load static %}
+
+
+{% block header_buttons %}
+  <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
+    <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
+  </div>
+{% endblock %}
+
+{% block app_navigation_items %}
+<div id="buttons">
+  <h3>America</h3>
+  <div class="radio">
+    <label><input type="radio" name="optradio">Argentina</label>
+  </div>
+  <div class="radio">
+   <label><input type="radio" name="optradio" >Bolivia</label>
+ </div>
+ <div class="radio">
+   <label><input type="radio" name="optradio">Cuba</label>
+ </div>
+ <div class="radio">
+   <label><input type="radio" name="optradio">Chile</label>
+ </div>
+ <div class="radio">
+   <label><input type="radio" name="optradio">Paraguay</label>
+ </div>
+ <div class="radio">
+   <label><input type="radio" name="optradio">Peru</label>
+ </div>
+ <h3>Asia</h3>
+ <div class="radio">
+   <label><input type="radio" name="optradio">Laos</label>
+ </div>
+ <div class="radio">
+   <label><input type="radio" name="optradio">Thailand</label>
+ </div>
+ <div id="btns">
+   <button class="btn btn-danger wow fadeInUp" data-wow-delay="0.4s" id= "deactivateMe" type="button">Hide Visited Points</button>
+ </div>
+
+</div>
+
+{% url 'resume:home' as home_url %}
+<br>
+<button class="btn btn-danger wow fadeInUp" class="{% if request.path == home_url %}active{% endif %}" data-wow-delay="0.4s" type="button" style = "width:100% ; color:white"><a href="{{ home_url }}">Home Page</a></button>
+
+<!-- <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li> -->
+<!-- <li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
+<li class="{% if request.path == design_url %}active{% endif %}"><a href="{{ design_url }}">Design Page</a></li>
+<button id ='button' disabled onclick="app.distanceFinder()">Calculate PHA</button> -->
+
+
+<style>
+  /* #app-navigation{
+
+  } */
+  #app-header{
+    display: none;
+  }
+  #app-content-wrapper.show-nav #app-content #app-actions{
+    display: none;
+  }
+  #app-content-wrapper{
+    display:flex;
+  }
+
+
+  /* #app-content-wrapper.show-nav #app-content{
+    padding-right:30%;
+  } */
+
+</style>
+
+<!-- This is the content in the other side -->
+{% endblock %}
+
+{% block app_content %}
+<head>
+
+</head>
+
+<body>
+  <!-- <div id="whole">
+
+
+  </div> -->
+  <div id="top">
+    <div id="header">
+      <h1>Visited Countries</h1>
+    </div>
+
+  </div>
+  <div id="contenido">
+    <!-- <div id="buttons">
+      <h3>America</h3>
+      <div class="radio">
+        <label><input type="radio" name="optradio">Argentina</label>
+      </div>
+      <div class="radio">
+       <label><input type="radio" name="optradio" >Bolivia</label>
+     </div>
+     <div class="radio">
+       <label><input type="radio" name="optradio">Cuba</label>
+     </div>
+     <div class="radio">
+       <label><input type="radio" name="optradio">Chile</label>
+     </div>
+     <div class="radio">
+       <label><input type="radio" name="optradio">Paraguay</label>
+     </div>
+     <div class="radio">
+       <label><input type="radio" name="optradio">Peru</label>
+     </div>
+     <h3>Asia</h3>
+     <div class="radio">
+       <label><input type="radio" name="optradio">Laos</label>
+     </div>
+     <div class="radio">
+       <label><input type="radio" name="optradio">Thailand</label>
+     </div>
+     <div id="btns">
+       <button class="btn btn-danger wow fadeInUp" data-wow-delay="0.4s" id= "deactivateMe" type="button">Hide Visited Points</button>
+     </div>
+
+    </div> -->
+    <div id="map"></div>
+  </div>
+</body>
+
+
+{% endblock %}
+
+{# Use the after_app_content block for modals #}
+{% block after_app_content %}
+  <!-- Example Modal -->
+
+{% endblock %}
+
+{% block app_actions %}
+
+{% endblock %}
+
+{% block content_dependent_styles %}
+  {{ block.super }}
+
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+
+  <!-- Load Leaflet from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+
+  <link href="{% static 'resume/css/countries.css' %}" rel="stylesheet"/>
+
+
+  <!-- <link rel="stylesheet" type="text/css" href="countries.css" media="screen" /> -->
+{% endblock %}
+
+{% block scripts %}
+  {{ block.super }}
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@2.3.3/dist/esri-leaflet.js"
+  integrity="sha512-cMQ5e58BDuu1pr9BQ/eGRn6HaR6Olh0ofcHFWe5XesdCITVuSBiBZZbhCijBe5ya238f/zMMRYIMIIg1jxv4sQ=="
+  crossorigin=""></script>
+
+  <script src="{% static 'resume/js/countries.js' %}" type="text/javascript"></script>
+
+{% endblock %}

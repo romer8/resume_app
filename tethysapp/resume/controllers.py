@@ -72,3 +72,10 @@ def home(request):
     }
 
     return render(request, 'resume/home.html', context)
+
+def map(request):
+    """
+    Controller for the page.
+    """
+    context = {}
+    return render(request, 'resume/maps.html', context)

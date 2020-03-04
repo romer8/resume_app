@@ -29,6 +29,12 @@ class Resume(TethysAppBase):
                 url='resume',
                 controller='resume.controllers.home'
             ),
+            UrlMap(
+                name='map',
+                url='resume/map',
+                controller='resume.controllers.map'
+            ),
+
         )
 
         return url_maps

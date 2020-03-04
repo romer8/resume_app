@@ -9,6 +9,44 @@
   </div>
 {% endblock %}
 
+{% block app_navigation_items %}
+
+{% url 'resume:home' as home_url %}
+{% url 'resume:map' as map_url %}
+
+<button class="btn btn-danger wow fadeInUp" class="{% if request.path == home_url %}active{% endif %}" data-wow-delay="0.4s" type="button"><a href="{{ home_url }}">Home Page</a></button>
+
+<li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
+<li class="{% if request.path == map_url %}active{% endif %}"><a href="{{ map_url }}">Map</a></li>
+<!-- <li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
+<li class="{% if request.path == design_url %}active{% endif %}"><a href="{{ design_url }}">Design Page</a></li>
+<button id ='button' disabled onclick="app.distanceFinder()">Calculate PHA</button> -->
+
+
+<style>
+  #app-navigation{
+    display:none;
+  }
+  #app-header{
+    display: none;
+  }
+  #app-content-wrapper.show-nav #app-content #app-actions{
+    display: none;
+  }
+  #app-content-wrapper{
+    display:flex;
+  }
+
+
+  #app-content-wrapper.show-nav #app-content{
+    padding-right:30%;
+  }
+
+</style>
+
+<!-- This is the content in the other side -->
+{% endblock %}
+
 {% block app_content %}
 <head>
 
@@ -440,7 +478,15 @@
       });
   });
 </script>
-<!-- templatemo 405 matrix -->
+{% url 'resume:home' as home_url %}
+{% url 'resume:map' as map_url %}
+
+<!-- <button class="btn btn-primary wow fadeInUp" class="{% if request.path == home_url %}active{% endif %}" data-wow-delay="0.4s" type="button" style = "width:20%"><a href="{{ home_url }}">Home Page</a></button> -->
+<button class="btn btn-primary wow fadeInUp" class="{% if request.path == map_url %}active{% endif %}" data-wow-delay="0.4s" type="button" style = "width:20%; margin-left: 40%"><a href="{{ map_url }}">Check my map</a></button>
+
+<!-- <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
+<li class="{% if request.path == map_url %}active{% endif %}"><a href="{{ map_url }}">Map</a></li> -->
+
 </body>
 
 
